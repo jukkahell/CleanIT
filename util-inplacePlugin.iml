@@ -4,15 +4,15 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="Grails" name="Grails" removed="false">
-          <file>file://$MODULE_DIR$/../plugins/util/web-app/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/../../Projects/plugins/util/web-app/WEB-INF/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/../plugins/util/web-app" relative="/" />
-          <root url="file://$MODULE_DIR$/../plugins/util/grails-app/views" relative="/" />
+          <root url="file://$MODULE_DIR$/../../Projects/plugins/util/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -25,36 +25,34 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../plugins/util">
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/grails-app/utils" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/grails-app/domain" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/grails-app/taglib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/test/unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/test/integration" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../plugins/util/grails-app/i18n" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../plugins/util/target/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/../plugins/util/target/test-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/../plugins/util/web-app/plugins" />
+    <content url="file://$MODULE_DIR$/../../Projects/plugins/util">
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/test/integration" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Projects/plugins/util/target/test-classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="grails-2.0.0" level="application" />
     <orderEntry type="module-library">
       <library name="Grails User Library (util-inplacePlugin)">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../plugins/util/lib" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.6.jar!/" />
+          <root url="file://$MODULE_DIR$/../../Projects/plugins/util/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../plugins/util/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../Projects/plugins/util/lib" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="CleanIt-grailsPlugins" />
+    <orderEntry type="library" name="grails-2.2.1" level="application" />
   </component>
 </module>
 

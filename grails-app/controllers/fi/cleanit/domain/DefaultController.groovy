@@ -1,7 +1,5 @@
 package fi.cleanit.domain
 
-import org.springframework.web.servlet.support.RequestContextUtils as RCU;
-
 class DefaultController {
 
     def index = {
@@ -17,7 +15,7 @@ class DefaultController {
             }
             taskCount = tasks.values().flatten().size();
         } else {
-            tasks = [0:null];
+            tasks = [0:null] as Map<Integer, List<Task>>;
         }
 
         [tasks:tasks, taskCount:taskCount];

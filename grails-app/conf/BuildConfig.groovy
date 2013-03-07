@@ -30,4 +30,4 @@ grails.project.dependency.resolution = {
     }
 }
 
-grails.plugin.location."util"           = "../plugins/util"
+grails.plugin.location."util"           = "../../Projects/plugins/util"

@@ -57,7 +57,7 @@ class Family {
     Map<Integer, List<Task>> dailyTasks() {
         List<Task> tasks = ActiveTask.findAllByStatusAndFamily(ActiveTaskStatus.UNDONE, this)?.task;
         tasks = tasks.sort { it.priority.ordinal() };
-        return [0:tasks];
+        return [0:tasks] as Map<Integer, List<Task>>;
     }
 
     Map<Integer, List<Task>> weeklyTasks() {
@@ -120,10 +120,13 @@ class Family {
         DateMidnight monthStart = DateMidnight.now().withDayOfMonth(1);
         DateMidnight monthEnd = monthStart.withDayOfMonth(now.dayOfMonth().getMaximumValue()).plusDays(1);
 
-        List<TaskDate> dateInstances = TaskDate.createCriteria().list() {
+        List<TaskDate> dateInstances = TaskDate.createCriteria().listDistinct {
             or {
                 isNull("dayOfYear");
                 "in"("dayOfYear", yearDays);
+            }
+            or {
+                isNull("day");
                 between("day", monthStart.toCalendar(this.locale), monthEnd.toCalendar(this.locale))
             }
             task {
@@ -131,26 +134,29 @@ class Family {
             }
         }
 
-        if (dateInstances) {
-            List<Task> tasks = Task.createCriteria().list() {
-                eq("family", this);
-                dates {
-                    'in'("id", dateInstances.id);
-                }
-            }
-        }
 
         Map<Integer, List<Task>> results = [:];
-        for (Task t in tasks) {
-            for (TaskDate td in t.dates) {
-                List<Integer> daysOfMonth = taskService.toDaysOfMonth(td);
-                for (int day in daysOfMonth) {
-                    if (!results[day]) {
-                        results[day] = [];
+        if (dateInstances) {
+            List<Task> monthlyTasks = Task.createCriteria().listDistinct {
+                and {
+                    eq("family", this);
+                    dates {
+                        'in'("id", dateInstances.id);
                     }
+                }
+            }
 
-                    if (!results[day].contains(t)) {
-                        results[day] << t;
+            for (Task t in monthlyTasks) {
+                for (TaskDate td in t.dates) {
+                    List<Integer> daysOfMonth = taskService.toDaysOfMonth(td);
+                    for (int day in daysOfMonth) {
+                        if (!results[day]) {
+                            results[day] = [];
+                        }
+
+                        if (!results[day].contains(t)) {
+                            results[day] << t;
+                        }
                     }
                 }
             }

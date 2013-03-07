@@ -5,7 +5,6 @@ import org.joda.time.DateTime
 import fi.cleanit.domain.ActiveTask
 import fi.cleanit.domain.TaskDate
 import fi.cleanit.enums.ActiveTaskStatus
-import org.joda.time.Weeks
 import org.joda.time.Months
 import org.joda.time.DateMidnight
 
@@ -69,7 +68,10 @@ class TaskService {
             List<Integer> results = [];
 
             for (int i = 0; i < weeksInMonth; i++) {
-                results << beginningOfMonth.withDayOfWeek(t.dayOfWeek).getDayOfMonth();
+                DateTime taskDate = beginningOfMonth.withDayOfWeek(t.dayOfWeek);
+                if (taskDate.getMonthOfYear() == now.getMonthOfYear()) {
+                    results << taskDate.getDayOfMonth();
+                }
                 beginningOfMonth = beginningOfMonth.plusWeeks(1);
             }
             return results;

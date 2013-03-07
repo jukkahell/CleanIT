@@ -47,7 +47,6 @@
       <library name="Grails User Library (CleanIt)">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.6.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -55,8 +54,8 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="util-inplacePlugin" exported="" />
-    <orderEntry type="library" exported="" name="grails-2.0.0" level="application" />
     <orderEntry type="module" module-name="CleanIt-grailsPlugins" />
+    <orderEntry type="library" exported="" name="grails-2.2.1" level="application" />
   </component>
 </module>
 
