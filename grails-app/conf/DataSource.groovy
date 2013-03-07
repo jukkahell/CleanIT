@@ -12,7 +12,7 @@ environments {
     development {
         dataSource {
             username = "root"
-            password = "mokkarinen"
+            password = "******"
             dbCreate = "update" // one of 'create', 'create-drop','update'
             url = "jdbc:mysql://localhost/cleanit"
 //            dialect = org.hibernate.dialect.MySQLInnoDBDialect
@@ -30,7 +30,7 @@ environments {
     production {
         dataSource {
             username = "cleanit"
-            password = "1NT1aan1"
+            password = "******"
             dbCreate = "update" // one of 'create', 'create-drop','update'
             url = "jdbc:mysql://127.0.0.1/cleanit"
             dialect = org.hibernate.dialect.MySQLInnoDBDialect
